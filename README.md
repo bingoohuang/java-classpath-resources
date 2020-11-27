@@ -7,6 +7,9 @@
 
 1. 从classpath的多个jar包内的资源，在非`-jar`方式时，可以读到多个。在`-jar`方式时，只能读到main包的一个资源.
 1. 从classpath的多个路径读取资源，都只能读取到一个.
+1. JAVA代码中，没有直接的API可以读取到通过`-cp`或者`-classpath`传入的`CLASSPATH`，可以
+    - 在shell中`export CLASSPATH`, 然后`System.getenv("CLASSPATH")`，建议此种方案，简单便捷
+    - [hack方式读取](https://github.com/zolyfarkas/spf4j/blob/master/spf4j-core/src/main/java/org/spf4j/unix/JVMArguments.java).
 
 ```bash
 #!/bin/bash
