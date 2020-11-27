@@ -5,7 +5,8 @@
 
 结论:
 
-1. 从classpath中，
+1. 从classpath的多个jar包内的资源，在非`-jar`方式时，可以读到多个。在`-jar`方式时，只能读到main包的一个资源.
+1. 从classpath的多个路径读取资源，都只能读取到一个.
 
 ```bash
 #!/bin/bash
